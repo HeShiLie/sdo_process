@@ -42,7 +42,6 @@ def sel_mid_line(input_dir: str, output_dir: str, date_time: datetime) -> Option
         output_path = os.path.join(output_dir, f"{date_time.strftime('/%Y/%m/%d/hmi.M_720s.%Y%m%d_%H%M%S')}_midline.pt")
 
         # Load and process data
-        print('Processing', data_path)
         data = torch.load(data_path)
         mid_line_data = data[:, 512]  # Select mid-line
 
