@@ -37,9 +37,9 @@ def sel_mid_line(input_dir: str, output_dir: str, date_time: datetime) -> Option
     """
     try:
         # Construct file paths
-        relevant_path = f"{date_time.strftime('/%Y/%m/%d/hmi.M_720s.%Y%m%d_%H%M%S')}_TAI.pt"
+        relevant_path = f"{date_time.strftime('%Y/%m/%d/hmi.M_720s.%Y%m%d_%H%M%S')}_TAI.pt"
         data_path = os.path.join(input_dir, relevant_path)
-        output_path = os.path.join(output_dir, f"{date_time.strftime('/%Y/%m/%d/hmi.M_720s.%Y%m%d_%H%M%S')}_midline.pt")
+        output_path = os.path.join(output_dir, f"{date_time.strftime('%Y/%m/%d/hmi.M_720s.%Y%m%d_%H%M%S')}_midline.pt")
 
         # Load and process data
         data = torch.load(data_path)
