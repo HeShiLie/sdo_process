@@ -17,7 +17,7 @@ def get_args():
     Parse command-line arguments.
     """
     parser = argparse.ArgumentParser(description='Create Carrington rotation movie')
-    parser.add_argument('--input_dir', type=str, default="/mnt/nas/home/huxing/202407/nas/data/hmi/magnet_pt", help='Input directory path')
+    parser.add_argument('--input_dir', type=str, default="/mnt/nas/home/huxing/202407/nas/data/hmi/magnet_pt/", help='Input directory path')
     parser.add_argument('--output_dir', type=str, default="/mnt/nas-tq/tianwen/home/gaozhe/SDO_data/hmi_1h_line/magnet_pt/", help='Output directory path')
     parser.add_argument('--num_cpus', type=int, default=64, help='Number of CPUs to use (default: 64)')
     return parser.parse_args()
@@ -42,6 +42,7 @@ def sel_mid_line(input_dir: str, output_dir: str, date_time: datetime) -> Option
         output_path = os.path.join(output_dir, f"{date_time.strftime('/%Y/%m/%d/hmi.M_720s.%Y%m%d_%H%M%S')}_midline.pt")
 
         # Load and process data
+        print('Processing', data_path)
         data = torch.load(data_path)
         mid_line_data = data[:, 512]  # Select mid-line
 
