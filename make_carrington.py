@@ -53,9 +53,9 @@ def sel_mid_line(input_dir: str, output_dir: str, date_time: datetime) -> Option
         return output_path
 
     except FileNotFoundError:
-        print(f"No data found locally for {relevant_path}, skipping...")
+        print(f"No data found locally for {data_path}, skipping...")
     except Exception as e:
-        print(f"Error processing {relevant_path}: {e}")
+        print(f"Error processing {data_path}: {e}")
 
     return None
 
